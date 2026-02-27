@@ -1,3 +1,13 @@
+# Reads pose CSV files and reshapes them into structured keypoint arrays per frame.
+
+# Computes torso center from left and right shoulder coordinates.
+
+# Extracts motion metrics including lateral sway, velocity magnitude, and shoulder-width variance.
+
+# Aggregates biomechanical stability features for each clip into a structured dictionary.
+
+# Batch-processes all CSV clips and exports motion summaries to a JSON file for downstream classification.
+
 import os
 import json
 import numpy as np
