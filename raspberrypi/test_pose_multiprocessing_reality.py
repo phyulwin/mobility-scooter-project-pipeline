@@ -1,3 +1,26 @@
+"""
+Module: test_pose_multiprocessing_reality.py
+
+Purpose:
+This script benchmarks pose estimation model performance using multiprocessing to parallelize 
+inference across multiple worker processes. It distributes video frames across a configurable 
+number of processes, each loading and executing a specified pose estimation model (MoveNet, 
+MediaPipe, YOLOv7, BodyPix, or MoveNet TPU), and measures end-to-end throughput and per-frame 
+latency with optional frame skipping and batch processing capabilities.
+
+Usage:
+Arguments:
+    -i, --video_path (str): Path to input video file [required]
+    -p, --pipe (str): Pose estimation model name [required]
+                      Options: bodypix_neck, movenet_pose, yolov7_pose, mediapipe_pose, movenet_tpu
+    -r, --repeat (int): Number of frames to process [required]
+    -s, --skip (int): Number of frames to skip from video start (default: 1000)
+    -n, --num_of_processes (int): Number of worker processes (default: 2)
+    -b, --batch_size (int): Frames per batch per process (default: 1)
+Output:
+    Initialization time, total processing time, average per-frame time, and frame count verification
+"""
+
 # Usage
 '''
 python raspberrypi/test_pose_multiprocessing_reality.py -i "video/test.mp4" -p movenet_pose -r 10 -b 20

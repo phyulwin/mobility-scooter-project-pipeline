@@ -1,3 +1,10 @@
+"""
+This module implements various detection models for object detection and keypoint estimation using the YOLO (You Only Look Once) architecture. 
+It includes classes for detecting objects (Detect, IDetect), estimating keypoints (IKeypoint), and auxiliary detection (IAuxDetect), 
+utilizing convolutional layers and implicit layers for improved performance. The models are designed to handle multiple detection layers and anchors, 
+allowing for flexible configurations based on the specific requirements of the task.
+"""
+
 import argparse
 import logging
 import sys

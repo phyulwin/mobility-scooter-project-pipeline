@@ -1,3 +1,11 @@
+"""
+This module contains various neural network layer implementations used in the YOLOv7 architecture, including 
+convolutional layers, pooling layers, and specialized blocks such as Bottlenecks and Ghost convolutions. 
+The classes defined here are designed to facilitate the construction of deep learning models for object detection tasks. 
+Each layer is implemented as a subclass of `torch.nn.Module`, ensuring compatibility with PyTorch's training and inference routines. 
+The code also includes utility functions for padding and concatenation, which are essential for building complex network architectures.
+"""
+
 import math
 from copy import copy
 from pathlib import Path

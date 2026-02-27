@@ -1,8 +1,14 @@
+"""
+Bodypix-based neck position detection module.
+This module uses the BodyPix segmentation model to identify human body parts in images
+and extract the neck position coordinates. It processes segmented masks to detect face
+regions (left/right) and torso, returning the (x, y) coordinate of the detected neck
+as the average x-position of face pixels and the maximum y-position, or falls back to
+torso detection if face regions are not found.
+"""
 # Bodypix model
 # inputs: image
 # output: (int, int) -> neck position
-
-
 
 import tensorflow as tf
 from tf_bodypix.api import download_model, load_model, BodyPixModelPaths

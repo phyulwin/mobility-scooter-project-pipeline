@@ -1,3 +1,11 @@
+"""
+This module contains various neural network components and operations used for object detection, specifically tailored for YOLOv7 architecture. 
+It includes classes for cross convolutions, weighted sums, mixed convolutions, and ensemble models, as well as custom non-maximum suppression (NMS) 
+operations for both ONNX Runtime and TensorRT. 
+The `End2End` class facilitates the export of models with integrated NMS operations, allowing for efficient inference. 
+Overall, this file serves as a critical part of the YOLOv7 implementation, providing essential building blocks for model architecture and post-processing.
+"""
+
 import numpy as np
 import random
 import torch

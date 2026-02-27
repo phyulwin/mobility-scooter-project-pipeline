@@ -1,4 +1,10 @@
 # mediapipe
+"""
+This module provides a class for processing images to extract 3D pose landmarks using the MediaPipe library. 
+The `MediapipePose` class initializes a pose detection model and processes input images to return a list of 
+specific 3D landmarks corresponding to key body parts. The landmarks are represented as a list of floats, 
+with each set of three values corresponding to the x, y, and z coordinates of a landmark in 3D space.
+"""
 # inputs: image
 # output: list[(float, float, float)] -> 9 3d-landmarks
 

@@ -1,4 +1,9 @@
 # movenet 
+"""
+This module implements the MovenetPose class, which utilizes the MoveNet model to detect human pose landmarks from input images. 
+The class is initialized with a pre-trained TensorFlow model and provides methods to process images and convert the detected landmarks into a specific format. 
+The output consists of a list of 2D coordinates representing key body landmarks, which can be used for various applications such as motion analysis and human-computer interaction.
+"""
 # inputs: image
 # output: list[(float, float)] -> 9 2d-landmarks
 

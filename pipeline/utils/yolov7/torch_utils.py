@@ -1,3 +1,11 @@
+'''
+PyTorch utility functions for YOLOR object detection model.
+This module provides essential utilities for model training and inference including device selection,
+distributed training synchronization, model profiling, weight initialization, and model optimization techniques.
+It includes helpers for CUDA/CPU device management, model fusion (conv+batchnorm), pruning, and EMA (Exponential Moving Average)
+for improved training stability and model performance.
+'''
+
 # YOLOR PyTorch utils
 
 import datetime

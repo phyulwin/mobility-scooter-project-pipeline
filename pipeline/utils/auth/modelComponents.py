@@ -1,3 +1,15 @@
+"""
+Siamese neural network architecture for skeleton-based action recognition.
+
+This module implements a Siamese network that processes skeletal joint data in 2D or 3D space
+using a hybrid approach combining Graph Convolutional Networks (GCN) for spatial relationships
+and 1D convolutional layers for temporal dynamics across body part segments (upper torso, 
+lower torso, left arm, right arm). 
+
+The model encodes variable-length sequences into fixed 64-dimensional
+embeddings suitable for metric learning tasks like action similarity or gait recognition.
+"""
+
 import torch
 from torch import nn
 import torch.nn.functional as F

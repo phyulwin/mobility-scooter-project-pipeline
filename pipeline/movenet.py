@@ -1,3 +1,11 @@
+"""
+MoveNet pose estimation pipeline for video processing.
+This module implements a video processing pipeline that extracts 2D skeletal landmarks
+from video frames using the MoveNet pose detection model. It reads frames sequentially
+from video input, processes them through pose estimation, and outputs the resulting
+coordinates to a CSV file with timing instrumentation.
+"""
+
 from tqdm import tqdm
 from .pipe.video_input import VideoInput
 from .pipe.movenet_pose import MovenetPose

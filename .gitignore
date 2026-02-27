@@ -7,3 +7,7 @@ __pycache__
 *mov
 *batch
 *zip
+.env
+.MP4
+.mp4
+*.jpg

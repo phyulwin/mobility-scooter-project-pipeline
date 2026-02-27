@@ -1,3 +1,10 @@
+"""
+This module defines the CSVOutput class, which is responsible for writing data to a CSV file. 
+It initializes the file with a specified path and column names, and provides a method to process 
+and write input data as rows in the CSV file. The file is automatically closed when the object 
+is deleted, ensuring proper resource management.
+"""
+
 from csv import writer
 
 class CSVOutput:

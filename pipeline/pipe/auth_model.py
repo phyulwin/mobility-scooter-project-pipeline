@@ -1,3 +1,11 @@
+"""
+Authentication Model Module
+This module implements a Siamese neural network-based authentication model for verifying user identity
+based on biometric input data. The model loads a pre-trained state dictionary and processes input tensors
+of shape (1, 27, 128) through the network to generate authentication embeddings or similarity scores.
+The processed output is converted to a Python list format for downstream integration in the authentication pipeline.
+"""
+
 # authentication model
 # inputs: (1, 27, 128)
 # output: ?

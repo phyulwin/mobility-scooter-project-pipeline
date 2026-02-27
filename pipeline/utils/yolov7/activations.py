@@ -1,3 +1,10 @@
+"""
+Activation functions module for YOLOv7 neural network.
+This module implements various activation functions optimized for YOLOv7 object detection model.
+Includes both standard and memory-efficient variants using custom autograd functions to reduce memory consumption.
+Implements modern activation functions like SiLU, Hardswish, Mish, and FReLU from recent deep learning research.
+Provides export-friendly implementations compatible with TorchScript, CoreML, and ONNX inference frameworks.
+"""
 # Activation functions
 
 import torch

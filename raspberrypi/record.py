@@ -1,3 +1,14 @@
+"""
+Energy consumption calculator for Raspberry Pi power monitoring.
+This module reads power consumption data from a CSV file (watt.csv) containing
+timestamp and power measurements. 
+
+It calculates the total energy consumed over a
+specific time interval by integrating power readings using the trapezoidal method
+(energy = power × time). The script captures an initial line count, waits 10 seconds
+for new data to be recorded, then computes the energy delta for all new entries.
+"""
+
 import time
 timestamp = int(time.time())
 start = 0

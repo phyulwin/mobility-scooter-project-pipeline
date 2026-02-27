@@ -10,11 +10,19 @@ conda activate
 conda create -n pipeline python=3.9 -y
 conda activate pipeline
 pip install -r requirements.txt
+
+pip install protobuf==3.20.3 --force-reinstall
 ```
 
 ## Usage
 ```
 python main.py -p PIPELINE -i INPUT -o OUTPUT [-b BATCHSIZE]
+
+pip install protobuf==3.20.3 --force-reinstall
+python main.py -p movenet -i input.mp4 -o output/movenet_output.csv
+python main.py -p mediapipe -i input.mp4 -o output/mediapipe_output.csv
+python main.py -p face_patch_to_mediapipe -i input.mp4 -o output/face_patch_output.csv
+python main.py -p yolov7 -i input.mp4 -o output/yolov7_output.csv
 ```
 - `-p, --pipeline`
     - Specifies the pipeline module to use for pose estimation from the pipeline directory.

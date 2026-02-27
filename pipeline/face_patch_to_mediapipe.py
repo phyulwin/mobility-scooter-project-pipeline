@@ -1,3 +1,11 @@
+"""
+Video processing pipeline that overlays a head patch image onto detected neck positions
+and extracts 3D pose landmarks using MediaPipe. Combines BodyPix neck detection with
+MediaPipe Pose estimation to generate temporal pose coordinate data from video frames.
+Handles frame alignment, compositing with alpha blending, and CSV serialization of
+skeletal joint positions across multiple body segments.
+"""
+
 import numpy as np
 import cv2
 from tqdm import tqdm

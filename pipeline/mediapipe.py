@@ -1,3 +1,11 @@
+"""
+Module for processing video files to extract human pose landmarks using MediaPipe.
+This module provides a pipeline for reading video frames, detecting pose landmarks
+using MediaPipe's pose estimation model, and writing the results to a CSV file.
+
+It tracks failed frames during processing and reports summary statistics upon completion.
+"""
+
 from tqdm import tqdm
 from .pipe.video_input import VideoInput
 from .pipe.mediapipe_pose import MediapipePose

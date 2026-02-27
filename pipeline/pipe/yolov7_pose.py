@@ -1,7 +1,12 @@
 # yolov7 
+"""
+This module implements the Yolov7Pose class for detecting and processing 2D human pose landmarks from images using the YOLOv7 model. 
+It provides methods to process single images and batches of images, returning a list of normalized landmark coordinates for key body points. 
+The model is designed to utilize GPU acceleration if available, ensuring efficient inference. 
+The landmarks are indexed to focus on specific body parts, facilitating applications in pose estimation and analysis.
+"""
 # inputs: image
 # output: list[(float, float)] -> 9 2d-landmarks
-
 
 import torch
 from torchvision import transforms
@@ -40,7 +45,7 @@ class Yolov7Pose:
         else:
             device = torch.device("cpu")
         
-        weights = torch.load('assets/yolov7-w6-pose.pt', map_location=device)
+        weights = torch.load('assets/yolov7-w6-pose.pt', map_location=device, weights_only=False)
         self.model = weights['model']
         _ = self.model.float().eval()
         self.input_size = 192

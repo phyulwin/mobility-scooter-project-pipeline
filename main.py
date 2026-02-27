@@ -1,4 +1,12 @@
+"""
+This script serves as a command-line interface for processing videos using pose estimation algorithms. 
+It allows users to specify the pipeline module to use, the input video file, the output file for results, 
+and the batch size for processing. The script checks for GPU compatibility and utilizes CUDA if available, 
+enabling efficient processing of video files through the specified pipeline functions.
+"""
+
 #!/data03/home/ruoqihuang/anaconda3/envs/tf/bin/python
+
 import argparse
 import importlib
 import torch
