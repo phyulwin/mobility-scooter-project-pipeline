@@ -1,4 +1,13 @@
-# OLLAMA PIPELINE ORDER
+# to-do
+- feed LLM with some annotations and show what segments are labeled as stable and unstable by our collaborators
+- improve overall LLM accuracy to 70% and above
+- add intructions on how to run the ollama-yolo pipeline (update and clean requirements.txt)
+- make the code reproducible 
+
+# OLLAMA PIPELINE ORDER 
+#### (Brainstormed with ChatGPT)
+
+![pipeline.png](/ollama/ollama-yolo-pipeline.png)
 
 ### STEP 1 — Split Full Video Into 3-Second Clips
 

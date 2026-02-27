@@ -1,3 +1,13 @@
+# Sends structured motion features to a local Mistral model via the Ollama HTTP API.
+
+# Constructs a controlled prompt defining stability criteria using biomechanical metrics.
+
+# Forces the model to return a strict JSON classification (0 = stable, 1 = unstable).
+
+# Handles API responses and parses model output into structured predictions.
+
+# Batch-processes all feature summaries and saves LLM classification results to JSON.
+
 import json
 import requests
 
