@@ -21,7 +21,7 @@ clips/
 
 ### STEP 2 — Run YOLO Pose On Each Clip (Generate CSV)
 
-You must process each clip to produce CSV files.
+we must process each clip to produce CSV files.
 
 Either loop manually or create a small runner script.
 
@@ -40,7 +40,7 @@ This uses:
 VideoInput → Yolov7Pose → CSVOutput
 ```
 
-from your pose pipeline 
+from wer pose pipeline 
 
 ---
 
@@ -123,7 +123,7 @@ In plain terms:
 
 # What This Means Technically
 
-You are giving the model:
+We are giving the model:
 
 * Mean sway
 * Max sway
@@ -131,7 +131,7 @@ You are giving the model:
 * Max speed
 * Shoulder variance
 
-But you are **not giving thresholds**.
+But we are **not giving thresholds**.
 
 So the LLM must “guess” what counts as excessive.
 
@@ -151,55 +151,8 @@ They lack a reference scale.
 
 ---
 
-# How To Improve It (If You Want LLM To Work Better)
-
-## Option 1 — Provide Explicit Threshold Rules (Recommended)
-
-Change your prompt to:
-
-```text
-If mean_sway_x > 0.08 OR max_sway_x > 0.25 OR max_speed > 0.30,
-classify as unstable (1).
-Otherwise classify as stable (0).
-```
-
-Now the LLM becomes a deterministic rule interpreter.
-
-Accuracy will likely jump.
-
----
-
-## Option 2 — Provide Few-Shot Examples
-
-Include:
-
-```text
-Example:
-mean_sway_x: 0.01 → stability: 0
-mean_sway_x: 0.14 → stability: 1
-```
-
-This anchors the model.
-
----
-
-## Option 3 — Stop Using LLM for Classification
-
-Since you already compute features, you can just implement:
-
-```python
-if mean_sway_x > threshold:
-    return 1
-else:
-    return 0
-```
-
-This will outperform the LLM.
-
----
-
 # Important Insight
 
-Your experiment just demonstrated something important:
+The experiment just demonstrated something important:
 
 > A general language model is not inherently strong at structured motion classification.
