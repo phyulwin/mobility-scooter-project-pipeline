@@ -62,3 +62,25 @@ def batch_extract(input_folder: str, output_json: str):
 
 if __name__ == "__main__":
     batch_extract("ollama/csv_clips_5s", "motion_features.json")
+
+
+# NOTES
+
+# The motion features are extracted using deterministic geometric computations with NumPy.
+
+# The 9 keypoints per frame are reshaped into a (frames, 9, 2) array, then the torso center is computed as the midpoint between the left and right shoulder coordinates.
+
+# Lateral sway is calculated as the standard deviation and max deviation of the torso’s x-position over time (np.std, np.max).
+
+# Speed is derived from frame-to-frame torso displacement using first differences (np.diff) and Euclidean norm (np.linalg.norm).
+
+# Shoulder variance is computed as the standard deviation of the Euclidean distance between left and right shoulders across frames.
+
+
+# Each frame contains 9 body landmarks, and each landmark has an (x, y) coordinate.
+
+# So per frame you have 9 × 2 values = 18 numbers, which are reshaped into a (9, 2) structure.
+
+# These 9 keypoints represent selected upper-body joints detected by YOLOv7 (e.g., shoulders, elbows, etc.).
+
+# Over time, this becomes a (frames, 9, 2) array — meaning for every frame you track 9 spatial points in 2D space.
